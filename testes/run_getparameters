@@ -1,0 +1,11 @@
+./one_get_measures.sh allen_both
+cd allen_both/allen_interneuron_81/
+rm -f lmeasure.txt
+cat *.txt >> lmeasure.csv
+cd ..
+cd allen_pyramidal_81/
+rm -f lmeasure.txt
+cat *.txt >> lmeasure.csv
+
+./slice_ml2features.py allen_both/allen_interneuron_81/ 1 > allen_both/allen_interneuron.csv
+./slice_ml2features.py allen_both/allen_pyramidal_81/ 1 > allen_both/allen_pyramidal.csv
